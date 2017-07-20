@@ -24,7 +24,7 @@ class FieldInput extends Component {
     const {input} = this.props
     return(
       <StyledField>
-        <Subject><h5>{this.props.subject}</h5></Subject>
+        <Subject><p>{this.props.subject}</p></Subject>
         <Input
           {...input}
           type="text"
