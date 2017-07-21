@@ -13,7 +13,7 @@ export default [
   {
     name: 'Miruna',
     grades: {
-      Maths: 10,
+      Maths: 9,
       Spanish: 7,
       Latin: 7,
       German: 10
@@ -22,7 +22,7 @@ export default [
   {
     name: 'Andrei',
     grades: {
-      Maths: 10,
+      Maths: 5,
       Spanish: 7,
       Latin: 7,
       German: 10

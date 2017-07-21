@@ -4,11 +4,18 @@ import {
   Route,
   Link
 } from 'react-router-dom'
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
 
 import Dashboard from './Dashboard'
 import GradesForm from './GradesForm'
+import gradesFetch from '../actions'
 
 class Home extends Component{
+  componentDidMount(){
+    console.log(this.props)
+    this.props.gradesFetch()
+  }
   render(){
     return(
       <div>
@@ -23,5 +30,13 @@ class Home extends Component{
   }
 }
 
+function mapDispatchToProps(dispatch){
+  return bindActionCreators({gradesFetch}, dispatch)
+}
 
-export default Home
+let HomeConnect = connect(
+  null,
+  mapDispatchToProps
+)(Home)
+
+export default HomeConnect
