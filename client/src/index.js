@@ -10,6 +10,7 @@ import {
 
 } from 'react-router-dom'
 import thunk from 'redux-thunk'
+import {connectRoutes} from 'redux-first-router'
 
 import App from './components/app'
 
