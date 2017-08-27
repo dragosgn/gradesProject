@@ -6,8 +6,7 @@ import { composeWithDevTools } from 'redux-devtools-extension'
 import createHistory from 'history/createBrowserHistory'
 import { reducer as formReducer } from 'redux-form'
 import {
-  BrowserRouter as Router,
-
+  BrowserRouter as Router
 } from 'react-router-dom'
 import thunk from 'redux-thunk'
 
