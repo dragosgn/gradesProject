@@ -48,15 +48,5 @@ class LineGraph extends Component{
   }
 }
 
-function mapStateToProps(state){
-  return{
-
-  }
-}
-
-let ConnectedLineGraph = connect(
-  mapStateToProps
-)(LineGraph)
-
 
 export default LineGraph

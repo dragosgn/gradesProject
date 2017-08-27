@@ -8,7 +8,6 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
 import Dashboard from './Dashboard'
-import GradesForm from './GradesForm'
 import gradesFetch from '../actions'
 
 class Home extends Component{

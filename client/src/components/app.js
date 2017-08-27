@@ -1,11 +1,14 @@
-import React, { Component } from 'react'
+import React from 'react'
+import {compose} from 'recompose'
 
 import Home from './Home'
 
-export default class App extends Component {
-  render() {
-    return (
-      <div><Home /></div>
-    )
-  }
-}
+let App = () => (
+  <div>
+    <Home />
+  </div>
+)
+
+export default compose(
+
+)(App)

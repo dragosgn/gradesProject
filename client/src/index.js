@@ -1,10 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
-import { createStore, applyMiddleware } from 'redux'
+import { createStore, applyMiddleware, combineReducers } from 'redux'
 import { composeWithDevTools } from 'redux-devtools-extension'
 import createHistory from 'history/createBrowserHistory'
-import rootReducer from './reducers'
+import { reducer as formReducer } from 'redux-form'
 import {
   BrowserRouter as Router,
   Route,
@@ -13,11 +13,19 @@ import {
 import thunk from 'redux-thunk'
 
 import App from './components/app'
-import reducers from './reducers'
 
+import gradesReducer from './reducers/fetchGradesReducer'
 
 const history = createHistory()
 let initialState = {}
+
+const rootReducer = combineReducers({
+  grades: gradesReducer,
+  form: formReducer.plugin({
+
+  })
+})
+
 
 let store = createStore(
   rootReducer,
@@ -35,4 +43,4 @@ ReactDOM.render(
       <App />
     </Router>
   </Provider>
-  , document.querySelector('.container'));
+  , document.querySelector('.container'))
