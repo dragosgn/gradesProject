@@ -6,7 +6,7 @@ import {
 import {compose} from 'recompose'
 import { connect } from 'react-redux'
 
-import Dashboard from './Dashboard'
+import StudentsList from './StudentsList'
 
 
 let Home = () => (
@@ -15,7 +15,7 @@ let Home = () => (
       <Link to="/students">Students</Link>
     </div>
     <div>
-      <Route path="/students" component={Dashboard} />
+      <Route path="/students" component={StudentsList} />
     </div>
   </div>
 )
