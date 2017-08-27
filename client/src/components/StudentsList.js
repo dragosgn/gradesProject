@@ -1,8 +1,6 @@
 import React from 'react'
 import {compose} from 'recompose'
 
-
-
 let StudentsList = () => (
   <div>
     <div>
