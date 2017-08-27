@@ -1,24 +1,19 @@
-import React, {Component} from 'react'
-
-import Students from './Students'
-import GradesForm from './GradesForm'
+import React from 'react'
+import {compose} from 'recompose'
 
 
 
-class Dashboard extends Component{
-  render() {
-    return(
-      <div>
-        {Students.map((student) => {
-          return(
-            <div key={student.name}>
-              <strong>{student.name}</strong>
-              <GradesForm form={`grades${student.name}`} grades={student.grades}/>
-            </div>
-          )
-        })}
-      </div>
-    )
-  }
-}
-export default Dashboard
+let StudentsList = () => (
+  <div>
+    <div>
+      Olga Nedelcu
+    </div>
+    <div>
+      Edad : 15
+    </div>
+  </div>
+)
+
+export default compose(
+
+)(StudentsList)

@@ -1,41 +1,26 @@
-import React, {Component} from 'react'
+import React from 'react'
 import {
-  BrowserRouter as Router,
   Route,
   Link
 } from 'react-router-dom'
+import {compose} from 'recompose'
 import { connect } from 'react-redux'
-import { bindActionCreators } from 'redux'
 
 import Dashboard from './Dashboard'
-import gradesFetch from '../actions'
 
-class Home extends Component{
-  componentDidMount(){
-    console.log(this.props)
-    this.props.gradesFetch()
-  }
-  render(){
-    return(
-      <div>
-        <div>
-          <Link to="/students">Students</Link>
-        </div>
-        <div>
-          <Route path="/students" component={Dashboard} />
-        </div>
-      </div>
-    )
-  }
-}
 
-function mapDispatchToProps(dispatch){
-  return bindActionCreators({gradesFetch}, dispatch)
-}
+let Home = () => (
+  <div>
+    <div>
+      <Link to="/students">Students</Link>
+    </div>
+    <div>
+      <Route path="/students" component={Dashboard} />
+    </div>
+  </div>
+)
 
-let HomeConnect = connect(
-  null,
-  mapDispatchToProps
+
+export default compose(
+  connect()
 )(Home)
-
-export default HomeConnect

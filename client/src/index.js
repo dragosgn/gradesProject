@@ -7,8 +7,7 @@ import createHistory from 'history/createBrowserHistory'
 import { reducer as formReducer } from 'redux-form'
 import {
   BrowserRouter as Router,
-  Route,
-  Link
+
 } from 'react-router-dom'
 import thunk from 'redux-thunk'
 
@@ -25,7 +24,6 @@ const rootReducer = combineReducers({
 
   })
 })
-
 
 let store = createStore(
   rootReducer,
