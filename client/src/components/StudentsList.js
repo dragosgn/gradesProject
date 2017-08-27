@@ -9,6 +9,24 @@ let StudentsList = () => (
     <div>
       Edad : 15
     </div>
+    <div>
+      Olga Nedelcu
+    </div>
+    <div>
+      Edad : 15
+    </div>
+    <div>
+      Olga Nedelcu
+    </div>
+    <div>
+      Edad : 15
+    </div>
+    <div>
+      Olga Nedelcu
+    </div>
+    <div>
+      Edad : 15
+    </div>
   </div>
 )
 
