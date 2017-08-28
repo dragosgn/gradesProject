@@ -35,9 +35,12 @@
     "webpack-dev-server": "^2.4.5"
   },
   "dependencies": {
+    "apollo-server-express": "^1.0.4",
     "assets-webpack-plugin": "^3.5.1",
     "babel-cli": "^6.24.1",
     "babel-eslint": "^6.1.2",
+    "babel-preset-stage-1": "^6.1.18",
+    "body-parser": "^1.17.2",
     "compression-webpack-plugin": "^0.4.0",
     "cross-env": "^5.0.1",
     "eslint": "^3.13.0",
@@ -45,20 +48,18 @@
     "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-promise": "^3.4.0",
     "eslint-plugin-react": "^6.9.0",
+    "express": "^4.15.3",
     "express-reloadable": "^1.0.11",
     "file-loader": "^0.11.2",
     "flow-bin": "^0.52.0",
-    "html-webpack-plugin": "^2.29.0",
-    "image-webpack-loader": "^3.3.1",
-    "nodemon": "^1.11.0",
-    "apollo-server-express": "^1.0.4",
-    "babel-preset-stage-1": "^6.1.18",
-    "body-parser": "^1.17.2",
-    "express": "^4.15.3",
     "graphql-tools": "^1.1.0",
     "history": "^4.6.3",
+    "html-webpack-plugin": "^2.30.1",
+    "image-webpack-loader": "^3.3.1",
     "lodash": "^3.10.1",
     "morgan": "^1.8.2",
+    "nodemon": "^1.11.0",
+    "path": "^0.12.7",
     "react": "^0.14.3",
     "react-dom": "^0.14.3",
     "react-redux": "^4.3.0",
@@ -66,6 +67,8 @@
     "react-router-dom": "^4.1.2",
     "redux": "^3.7.2",
     "redux-form": "^7.0.1",
-    "redux-thunk": "^2.2.0"
+    "redux-thunk": "^2.2.0",
+    "reloadable": "0.0.3",
+    "webpack": "^2.7.0"
   }
 }
