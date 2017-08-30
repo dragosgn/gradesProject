@@ -3,11 +3,11 @@ import {
   Route,
   Link
 } from 'react-router-dom'
-import {compose} from 'recompose'
+import {compose, lifecycle} from 'recompose'
 import { connect } from 'react-redux'
 
 import StudentsList from './StudentsList'
-
+import fetchStudents from "../actions"
 
 let Home = () => (
   <div>
@@ -22,5 +22,10 @@ let Home = () => (
 
 
 export default compose(
-  connect()
+  connect(),
+  lifecycle({
+    componentDidMount: ({dispatch}) => () => {
+      dispatch(fetchStudents())
+    }
+  })
 )(Home)
