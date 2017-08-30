@@ -15,6 +15,7 @@ let Home = () => (
       <Link to="/students">Students</Link>
     </div>
     <div>
+      <h1>Testing SSH</h1>
       <Route path="/students" component={StudentsList} />
     </div>
   </div>
