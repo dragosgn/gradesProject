@@ -1,8 +1,6 @@
 import React from 'react'
 import {compose} from 'recompose'
 
-
-
 let StudentItem = ({name, age}) => (
   <div>
     <div>
@@ -16,5 +14,4 @@ let StudentItem = ({name, age}) => (
 
 
 export default compose(
-
 )(StudentItem)
