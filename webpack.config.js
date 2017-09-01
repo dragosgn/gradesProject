@@ -30,9 +30,25 @@ export default{
   entry: isDev ? {
     app: [
       'babel-polyfill',
-      'react-hot-loader/patch'
+      'react-hot-loader/patch',
       `webpack-dev-server/client?https://${host}:${port}`,
-      path.join(__dirname, '/src')
-    ]
+      path.join(__dirname, '/src/client/index.js')
+    ],
+    vendor
+  } : { app: [
+    'babel-polyfill',
+    path.join(__dirname, '/src/client/index.js')
+  ],
+  vendor
+},
+  output: {
+    path: path.join(__dirname, "public"),
+    filename: isDev ? 'bundle-[name].js' : 'bundle-[name]-[hash].js',
+  },
+  devServer: {
+    hot: true,
+    historyApiFallback: true,
+    contentBase: path.resolve(__dirname, "public"),
+    
   }
 }
