@@ -31,7 +31,8 @@ export default{
     app: [
       'babel-polyfill',
       'react-hot-loader/patch'
-      `webpack-dev-server/client?https://${host}:${port}`
+      `webpack-dev-server/client?https://${host}:${port}`,
+      path.join(__dirname, '/src')
     ]
   }
 }
