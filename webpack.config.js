@@ -49,6 +49,13 @@ export default{
     hot: true,
     historyApiFallback: true,
     contentBase: path.resolve(__dirname, "public"),
-    
+    port,
+    overlay: true,
+  },
+  setup(app){
+    let srcDir = path.resolve(__dirname, "src", "server")
+    reloadable(app, {
+      requireFile: path.join(srcDir, "./setup")
+    })
   }
 }
