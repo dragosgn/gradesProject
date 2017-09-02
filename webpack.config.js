@@ -51,11 +51,23 @@ export default{
     contentBase: path.resolve(__dirname, "public"),
     port,
     overlay: true,
-  },
   setup(app){
     let srcDir = path.resolve(__dirname, "src", "server")
     reloadable(app, {
-      requireFile: path.join(srcDir, "./setup")
+      requireFile: path.join(srcDir, "./setup"),
+      watch: srcDir,
+      watchOpts: {
+        ignoreInitial: true,
+      }
     })
   }
+},
+  plugin: [
+    new webpack.optimize.CommonsChunkPlugin({
+      name: "vendor",
+      minChunks: Infinity
+    }),
+    ...(isDev ? [new webpack.HotModuleReplacementPlugin()] : []),
+
+  ]
 }
