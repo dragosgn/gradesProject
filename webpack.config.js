@@ -1,5 +1,6 @@
 import path from 'path'
 import webpack from 'webpack'
+import qs from 'querystring'
 import reloadable from "express-reloadable"
 import HtmlWebpackPlugin from "html-webpack-plugin"
 import CompressionWebpackPlugin from "compression-webpack-plugin"
@@ -68,6 +69,52 @@ export default{
       minChunks: Infinity
     }),
     ...(isDev ? [new webpack.HotModuleReplacementPlugin()] : []),
-
-  ]
+    new webpack.EnviromentPlugin(Object.keys(process.env)),
+    new webpack.NamedModulesPlugin(),
+    new HtmlWebpackPlugin({
+      filename: 'index.html',
+      template: 'index.html.ejs',
+      chunks: ['vendor', 'app']
+    }),
+    new CompressionWebpackPlugin({
+      asset: '[path].gz[query]',
+      algorithm: "gzip",
+			test: /\.(js|html)$/,
+			threshold: 10240,
+			minRatio: 0.8
+    }),
+    new AssetsPlugin()
+  ],
+  module: {
+    loaders: [
+      {
+        test: /\.js$/,
+        exclude: /(node_modules|bower_components)/,
+        loader: 'babel-loader'
+      },
+      {
+          test: /highcharts\/highcharts-more\.src\.js/,
+          use: ['imports-loader?module=>undefined,Highcharts=highcharts'],
+      },
+      {
+        test: /\.css$/,
+        loader: [
+          "style-loader",
+          'css-loader?' + qs.stringify({
+            modules: false,
+            importLoaders: 1,
+            localIdentName: '[path][name]-[local]'
+          }),
+        ].join("!")
+      },
+      {
+        test: /\.(jpe?g|png|gif|svg)$/i,
+        loaders: 'file-loader'
+      },
+    ],
+  },
+  resolve: {
+    extensions: ['.js']
+  },
+  stats: "verbose"
 }
