@@ -4,7 +4,6 @@ const app = express()
 
 app.get('/*', (req, res) => res.sendFile('./public/index.html'))
 
-const server = app.listen(process.env.PORT)
+const server = app.listen(3000)
 
-server.listen(process.env.PORT)
-console.info(`listening ${process.env.PORT}`)
+console.info(`listening on 3000`)
